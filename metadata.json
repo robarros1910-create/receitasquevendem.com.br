@@ -1,0 +1,6 @@
+{
+  "name": "Receitas que Vendem",
+  "description": "Página Oficial do portal Receitas que Vendem - Fature alto com receitas prontas e planilhas de precificação profissional.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
