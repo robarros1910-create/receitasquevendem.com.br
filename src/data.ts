@@ -78,25 +78,33 @@ export const PRODUCT_RECIPES: RecipeItem[] = [
 export const DELIVERABLES: DeliverableItem[] = [
   {
     id: "del_1",
-    title: "São João Lucrativo: 45 Receitas Profissionais",
-    description: "O e-book principal completo com o passo a passo de 45 receitas juninas e sazonais mais lucrativas do mercado, pesadas e medidas para você produzir diretamente da cozinha da sua casa com alta margem de lucro e sucesso garantido.",
+    title: "Método Prático São João Lucrativo",
+    description: "O método prático completo em formato de guia passo a passo com 45 receitas juninas sazonais altamente lucrativas do mercado, pesadas e medidas para você produzir diretamente de casa e conquistar alta rentabilidade.",
     tagline: "MATERIAL PRINCIPAL"
-  },
-  {
-    id: "del_2",
-    title: "Tabela de Custos Inteligente São João Lucrativo",
-    description: "A planilha automatizada inteligente para calcular centavo por centavo de custo, gás, ingredientes, perdas e a sua margem exata de lucro de forma instantânea e simples.",
-    tagline: "SUPER BÔNUS INCLUSO"
   }
 ];
 
 export const BONUSES: BonusItem[] = [
   {
-    id: "smart_sheet_bonus",
-    title: "Tabela de Custos Inteligente São João Lucrativo (+ Guia Rápido de Utilização)",
+    id: "bonus_1",
+    title: "Planilha Inteligente de Custos",
     value: 47,
-    description: "Essa mesma planilha automática de precificação e custos para calcular seu lucro real de forma instantânea, acompanhada de um guia prático passo a passo de utilização em minutos.",
-    badge: "BÔNUS EXCLUSIVO GRÁTIS"
+    description: "A planilha automatizada de precificação e custos para calcular centavo por centavo de ingredientes, gás, embalagens e estimar facilmente sua margem exata de lucro.",
+    badge: "BÔNUS GRÁTIS 01"
+  },
+  {
+    id: "bonus_2",
+    title: "Kit de Artes para Vendas",
+    value: 57,
+    description: "Modelos e criativos de propaganda prontos para você bombar seu WhatsApp, stories e postagens, atraindo clientes fiéis de forma rápida.",
+    badge: "BÔNUS GRÁTIS 02"
+  },
+  {
+    id: "bonus_3",
+    title: "Guia de Combos Lucrativos de São João",
+    value: 37,
+    description: "Guia prático para criar combos irresistíveis de doces e quitutes juninos e faturar o dobro estimulando compras de maior ticket médio.",
+    badge: "BÔNUS GRÁTIS 03"
   }
 ];
 

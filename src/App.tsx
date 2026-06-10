@@ -44,13 +44,15 @@ import { DELIVERABLES, BONUSES, FAQS } from "./data";
 
 // Imagem gastronômica premium rica de comidas juninas
 import comidasJuninasPremium from "./assets/images/comidas_juninas_premium_1780515434849.png";
+import saoJoaoMockup from "./assets/images/sao_joao_mockup_v2_1780515338548.png";
+import saoJoaoBannerPremium from "./assets/images/sao_joao_banner_premium_1781051537037.png";
 
 // ==========================================
 // CONFIGURAÇÕES DE LANÇAMENTO (HOTMART)
 // Mude para "true" para redirecionar os botões de compra direto para seu link oficial da Hotmart!
 // Se estiver como "false", a página exibe uma maravilhosa simulação de checkout nativa com Order Bump e Upsell.
 const USAR_LINK_DIRETO_HOTMART = true;
-const LINK_CHECKOUT_HOTMART = "https://pay.hotmart.com/A106118711S?bid=1780524635850";
+const LINK_CHECKOUT_HOTMART = "https://pay.hotmart.com/A106118711S";
 
 // CONFIGURAÇÃO DO WHATSAPP REAL DE SUPORTE
 // Substitua pelo seu número para receber dúvidas diretamente!
@@ -345,41 +347,57 @@ export default function App() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.1 }}
               id="hero-mockup-wrapper"
-              className="relative bg-white-cream p-4 rounded-3xl shadow-2xl border-4 border-[#2A1711] max-w-sm sm:max-w-md w-full transform lg:rotate-2 hover:rotate-0 transition duration-500"
+              className="w-full max-w-[500px] relative bg-[#2A1711] p-3 sm:p-4 rounded-[2rem] shadow-2xl border-4 border-[#FFA000] hover:shadow-[0_20px_50px_rgba(198,40,40,0.35)] transition-all duration-300 hover:scale-[1.02]"
             >
               {/* Top Banner Ribbon */}
-              <div className="absolute -top-3.5 -right-3.5 bg-secondary text-white font-black text-xs px-3.5 py-1.5 rounded-full transform rotate-12 shadow-lg flex items-center gap-1 border-2 border-white select-none">
-                <UtensilsCrossed className="w-4 h-4 text-yellow-300" /> SABOR REAL
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#C62828] text-white text-[10px] sm:text-xs font-black px-4 py-1.5 rounded-full tracking-widest uppercase shadow-md border border-yellow-400/30 z-10 whitespace-nowrap animate-bounce leading-none">
+                🔥 OFERTA DE LANÇAMENTO ATIVA
               </div>
 
-              {/* Gastronomic Image with mouth-watering look */}
-              <div className="relative rounded-2xl overflow-hidden shadow-inner bg-gradient-to-b from-yellow-100 to-amber-50 border border-amber-200">
+              {/* Inner picture frame */}
+              <div className="relative rounded-[1.2rem] overflow-hidden border-2 border-[#FFA000]/60 bg-[#120705] shadow-inner mt-4">
                 <img 
-                  src={comidasJuninasPremium} 
-                  alt="Deliciosas Comidas Juninas Tradicionais de Alto Faturamento" 
+                  src={saoJoaoBannerPremium} 
+                  alt="Apostila Digital São João Lucrativo Método Prático e 3 Super Bônus" 
                   referrerPolicy="no-referrer"
-                  className="w-full h-auto object-cover hover:scale-[1.04] transition duration-500 aspect-[4/3] sm:aspect-square"
+                  className="w-full h-auto block"
                 />
-                
-                {/* Image Overlay Label */}
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 text-white">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-primary">Apenas uma pequena prévia!</p>
-                  <p className="text-xs font-semibold text-gray-200 mt-0.5 leading-snug">
-                    Você terá acesso ao passo a passo completo de dezenas de bolos, caldos salgados, doces finos, bebidas quentes, tabelas práticas e estratégias de venda!
-                  </p>
-                </div>
               </div>
 
-              {/* Premium callout block */}
-              <div className="mt-4 p-3 bg-brand-dark rounded-xl text-[#FFF8E7] text-xs flex justify-between items-center">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-primary fill-primary" />
-                  <span className="font-bold">Apostila Completa + Planilhas</span>
+              {/* Pricing section inside the frame (TUDO ISSO POR 19,90) */}
+              <div className="mt-3.5 bg-[#FFFDF9] rounded-xl p-3.5 sm:p-4 border border-[#FFA000]/30 shadow-inner text-center">
+                <p className="text-[10px] sm:text-xs text-[#2A1711] font-extrabold uppercase tracking-widest leading-none">
+                  Método Prático + 3 Bônus Exclusivos
+                </p>
+                <div className="flex items-center justify-center gap-3 mt-2">
+                  <span className="text-xs text-gray-400 line-through font-mono">De R$ 238,00</span>
+                  <span className="bg-[#C62828] text-white text-[8px] font-black px-2 py-0.5 rounded uppercase leading-none">
+                    91% DE DESCONTO
+                  </span>
                 </div>
-                <div className="text-right">
-                  <span className="text-[10px] text-gray-400 block font-mono">INVESTIMENTO ÚNICO</span>
-                  <span className="font-black text-yellow-400 font-mono">R$ 19,90</span>
+                
+                <div className="mt-2 text-center border-t border-dashed border-amber-200/50 pt-2.5">
+                  <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">LEVE TUDO ISSO HOJE POR APENAS</p>
+                  <div className="inline-flex items-baseline gap-1.5 text-center">
+                    <span className="text-lg font-extrabold text-[#C62828] font-mono leading-none">R$</span>
+                    <span className="text-4xl sm:text-5xl font-black text-[#C62828] tracking-tight leading-none drop-shadow-sm">19,90</span>
+                    <span className="text-xs font-extrabold text-[#2A1711] uppercase tracking-wide leading-none">Único</span>
+                  </div>
                 </div>
+
+                <div className="mt-3.5 pt-3 border-t border-amber-200/50 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-[10px] text-[#5D4037] font-bold">
+                  <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Acesso Vitalício Imediato</span>
+                  <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Sem Mensalidades</span>
+                </div>
+
+                {/* Highly clickable micro button inside the frame */}
+                <button 
+                  onClick={openCheckout}
+                  className="mt-3.5 w-full bg-gradient-to-r from-amber-500 to-rose-600 hover:from-amber-600 hover:to-rose-700 text-white text-xs sm:text-sm font-black uppercase py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  GARANTIR TODOS OS BENEFÍCIOS JÁ
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             </motion.div>
           </div>
@@ -622,55 +640,130 @@ export default function App() {
             </div>
             <h3 className="font-extrabold text-xl text-brand-dark">PROMOVER</h3>
             <p className="text-xs text-gray-600 leading-relaxed">
-              Chega de timidez! Roteiros exatos e mensagens prontas para você copiar e disparar no WhatsApp para condomínios, empresas e colégios. Encha sua agenda de pré-encomendas garantidas.
+              Chega de timidez! Roteiros exatos e mensagens prontas para você copiar e disparar no WhatsApp para vizinhos, condomínios e grupos locais. Encha sua agenda de encomendas rápidas sem complicação!
             </p>
           </div>
         </div>
       </section>
 
-      {/* SECTION 05 — O QUE VOCÊ VAI RECEBER */}
+      {/* SECTION 05 — O KIT COMPLETO INTEGRADO (PRINCIPAL + BÔNUS JUNTOS) */}
       <section id="conteudo-completo" className="bg-[#FFF8E7] py-20 px-6 border-t border-primary/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-xl mx-auto mb-16">
-            <span className="text-xs uppercase font-extrabold tracking-widest text-[#C62828] block mb-2">Engrenagem de Valor</span>
+            <span className="text-xs uppercase font-extrabold tracking-widest text-[#C62828] block mb-2">Engrenagem de Alto Faturamento</span>
+            <span className="bg-[#C62828] text-white text-[10px] uppercase font-black px-4 py-1.5 rounded-full tracking-widest inline-block mb-3 animate-pulse">
+              🔥 SUPER KIT COMPLETO INTEGRADO
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark leading-tight">
-              O Que Você Vai Receber ao Entrar Hoje
+              Tudo o que Você Recebe em Seu Acesso Único
             </h2>
             <p className="text-sm text-gray-600 mt-2 font-medium">
-              Todo o arsenal prático que torna impossível você não faturar se aplicar o passo de produção.
+              Não é apenas um PDF de receitas. É um kit comercial inteligente desenvolvido para estruturar seu negócio de forma descomplicada!
             </p>
           </div>
 
-          {/* Premium Cards representation using static values from DELIVERABLES */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {DELIVERABLES.map((item, index) => {
-              return (
-                <div 
-                  key={item.id} 
-                  className="bg-[#FFFDF9] rounded-2xl p-6 border-b-4 border-primary/60 shadow hover:shadow-lg transition flex flex-col justify-between border border-amber-200/20 group"
-                >
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="bg-[#6D4C41]/10 text-[#6D4C41] text-[10px] font-black uppercase px-2.5 py-1 rounded">
-                        {item.tagline}
-                      </span>
-                      <span className="text-gray-400 font-extrabold text-xs">ARQUIVO 0{index + 1}</span>
-                    </div>
-                    <h3 className="font-extrabold text-lg text-brand-dark leading-tight group-hover:text-secondary transition">{item.title}</h3>
-                    <p className="text-xs text-gray-600 leading-relaxed">{item.description}</p>
+          {/* O SUPER BOX PREMIUM DESTACADO (PRODUTO + BÔNUS UNIFICADOS EM UM CAMPO SÓ DE ALTO IMPACTO) */}
+          <div className="max-w-4xl mx-auto bg-[#FFFDF9] rounded-3xl p-6 sm:p-10 border-4 border-[#FFA000] shadow-2xl relative overflow-hidden group hover:border-[#C62828] transition-all duration-300">
+            {/* Efeito de brilho de fundo decorativo */}
+            <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-yellow-400 via-[#C62828] to-amber-500" />
+            
+            {/* Crachá premium de alto contraste no canto superior direito */}
+            <div className="absolute top-4 right-4 bg-[#C2185B] text-white font-black text-[9px] uppercase px-3.5 py-1.5 rounded-full tracking-wider shadow">
+              ✓ KIT COMPLETO: 88% DE DESCONTO
+            </div>
+
+            <div className="mt-8 space-y-8">
+              {/* O PRODUTO PRINCIPAL (com destaque luxuoso no topo) */}
+              <div className="bg-amber-50/50 p-6 rounded-2xl border-2 border-[#FFA000]/30 hover:border-[#FFA000]/60 transition-all duration-300">
+                <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
+                  <div className="w-14 h-14 bg-[#FFA000]/10 text-[#FFA000] rounded-2xl flex items-center justify-center shrink-0 text-3xl font-black">
+                     📚
                   </div>
-                  <div className="mt-6 pt-3 border-t border-dashed border-gray-100 flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 text-[10px] text-emerald-800 font-bold">
-                      <Check className="w-3.5 h-3.5 text-emerald-600" /> Entrega digital imediata
+                  <div className="grow">
+                    <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                      <span className="bg-amber-600/10 text-amber-800 text-[9px] font-black uppercase px-2 py-0.5 rounded">
+                        MÉTODO PRINCIPAL
+                      </span>
+                      <span className="text-[10px] text-emerald-700 font-extrabold flex items-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-600" /> Disponível Imediatamente
+                      </span>
                     </div>
-                    <span className="text-[9px] bg-amber-100 text-[#6D4C41] font-extrabold px-2 py-0.5 rounded">
-                      Incluso✓
-                    </span>
+                    <h3 className="font-extrabold text-xl text-brand-dark leading-tight group-hover:text-secondary duration-300">
+                      {DELIVERABLES[0].title}
+                    </h3>
+                    <p className="text-xs text-gray-600 mt-2 leading-relaxed">
+                      {DELIVERABLES[0].description}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+
+              {/* Seção dos Bônus, integrada no mesmo Box */}
+              <div className="pt-2 border-t border-dashed border-amber-200">
+                <h4 className="text-xs font-black text-[#6D4C41] uppercase tracking-wider mb-5 flex items-center gap-1.5 justify-center sm:justify-start">
+                  <span>🎁 MATERIAL DE APOIO DE GRAÇA INCLUSO:</span>
+                </h4>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {BONUSES.map((bonus) => (
+                    <div 
+                      key={bonus.id} 
+                      className="bg-white border border-gray-100 hover:border-[#FFA000]/50 rounded-xl p-4 flex flex-col justify-between space-y-3 transition hover:shadow-md"
+                    >
+                      <div className="space-y-1.5">
+                        <div className="flex justify-between items-center">
+                          <span className="text-[9px] font-extrabold text-secondary uppercase tracking-wide">
+                            {bonus.badge}
+                          </span>
+                          <span className="bg-emerald-50 text-emerald-800 text-[8px] font-black px-1.5 py-0.5 rounded uppercase">
+                            Grátis
+                          </span>
+                        </div>
+                        <h5 className="font-extrabold text-xs text-brand-dark leading-snug">{bonus.title}</h5>
+                        <p className="text-[11px] text-gray-500 leading-relaxed">{bonus.description}</p>
+                      </div>
+
+                      <div className="pt-2 border-t border-gray-50 flex items-center justify-between text-[11px]">
+                        <div>
+                          <span className="text-[8px] text-gray-400 block line-through">De R$ {bonus.value},00</span>
+                          <span className="font-bold text-emerald-600">Por R$ 0,00</span>
+                        </div>
+                        <span className="text-[9px] bg-emerald-100 text-emerald-800 font-extrabold px-2 py-0.5 rounded">
+                          Incluso
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* BARRA DE FECHAMENTO PREMIUM NO MESMO BOX */}
+              <div className="mt-8 pt-6 border-t border-amber-200/60 bg-[#2A1711] text-[#FFF8E7] rounded-3xl p-6 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                <div className="absolute inset-0 bg-[#C62828]/5 pointer-events-none" />
+                
+                <div className="text-center md:text-left space-y-1 relative z-10">
+                  <p className="text-[10px] text-primary uppercase font-extrabold tracking-widest">SOMA DE TODO SEU KIT COMPLETO:</p>
+                  <p className="text-sm text-gray-400 line-through font-mono font-bold leading-none">R$ 238,00</p>
+                  <p className="text-base font-black text-white leading-tight">
+                    Leve Tudo Hoje por Apenas <span className="text-primary font-bold">R$ 19,90</span>!
+                  </p>
+                  <p className="text-[10px] text-emerald-400 font-black">✓ Economia imediata de R$ 218,10</p>
+                </div>
+
+                <div className="w-full md:w-auto relative z-10 text-center">
+                  <a 
+                    href="#oferta-uncondicional" 
+                    className="w-full md:w-auto inline-block bg-primary hover:bg-white text-[#2A1711] hover:text-brand-dark text-xs font-black uppercase px-6 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:scale-105"
+                  >
+                    Garantir Kit Completo →
+                  </a>
+                  <span className="text-[9px] text-gray-400 block mt-2">Acesso imediato e vitalício</span>
+                </div>
+              </div>
+
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -678,67 +771,6 @@ export default function App() {
       <section className="py-16 px-6 max-w-5xl mx-auto">
         {/* Render our interactive profit calculator widget */}
         <ProfitCalculator />
-      </section>
-
-      {/* SECTION 06 — BÔNUS PREMIUM */}
-      <section className="bg-brand-dark text-white py-20 px-6 relative overflow-hidden">
-        {/* Festive pattern background overlay */}
-        <div className="absolute inset-0 bg-flags pointer-events-none opacity-5" />
-        
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center max-w-xl mx-auto mb-16">
-            <span className="bg-primary text-brand-dark text-[10px] uppercase font-black px-3 py-1 rounded-full tracking-widest inline-block mb-3">
-              Super Pacote Sazonal
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-              O Super Bônus Exclusivo que você leva GRÁTIS hoje
-            </h2>
-            <p className="text-sm text-gray-300 mt-2">
-              Se comprado separadamente, este material de apoio custaria R$ 47,00. Hoje ele está 100% incluso!
-            </p>
-          </div>
-
-          <div className="max-w-2xl mx-auto">
-            {BONUSES.map((bonus) => (
-              <div 
-                key={bonus.id} 
-                className="bg-[#2A1711] border border-accent/40 rounded-2xl p-6 flex flex-col justify-between text-left space-y-4 hover:border-primary/50 transition-all duration-300"
-              >
-                <div className="space-y-2">
-                  <span className="text-[10px] font-extrabold text-primary tracking-widest block font-mono">
-                    {bonus.badge}
-                  </span>
-                  <h3 className="font-extrabold text-[#FFF8E7] border-b border-accent/20 pb-2 text-base">{bonus.title}</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed">{bonus.description}</p>
-                </div>
-
-                <div className="pt-3 border-t border-accent/20 flex justify-between items-center text-xs">
-                  <div>
-                    <span className="text-[9px] text-gray-400 block line-through">Valor comum: R$ {bonus.value},00</span>
-                    <span className="font-bold text-emerald-400">Hoje: R$ 0,00</span>
-                  </div>
-                  <span className="bg-emerald-800 text-white text-[10px] font-black px-3 py-1 rounded uppercase">
-                    Grátis
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Sum value calculation to enforce high marketing conversion */}
-          <div className="mt-12 bg-white-cream text-brand-dark rounded-2xl p-6 text-center max-w-xl mx-auto border-2 border-primary/50">
-            <p className="text-xs text-gray-500 uppercase font-extrabold">Você economizará instantaneamente:</p>
-            <p className="text-xl font-black text-secondary leading-tight mt-1">
-              R$ 47,00 em material de apoio essencial
-            </p>
-            <a 
-              href="#oferta-uncondicional" 
-              className="text-xs text-[#6D4C41] hover:underline font-extrabold block mt-2"
-            >
-              Quero garantir meu bônus exclusivo agora →
-            </a>
-          </div>
-        </div>
       </section>
 
       {/* SECTION 07 — TRANSFORMAÇÃO (Antes vs Depois) */}
@@ -961,20 +993,28 @@ export default function App() {
             {/* List items values stacked */}
             <div className="space-y-3 divide-y divide-gray-100">
               <div className="flex justify-between items-center text-xs text-gray-600 font-bold py-1">
-                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 shrink-0" /> E-book São João Lucrativo: 45 Receitas Profissionais</span>
+                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 shrink-0" /> Método Prático São João Lucrativo</span>
                 <span className="font-mono text-gray-400">R$ 97,00</span>
               </div>
               <div className="flex justify-between items-center text-xs text-gray-600 font-bold pt-2.5 py-1">
-                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 shrink-0" /> Bônus: Tabela de Custos Inteligente São João Lucrativo + Guia Rápido</span>
+                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 shrink-0" /> Bônus: Planilha Inteligente de Custos</span>
                 <span className="font-mono text-gray-400">R$ 47,00</span>
+              </div>
+              <div className="flex justify-between items-center text-xs text-gray-600 font-bold pt-2.5 py-1">
+                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 shrink-0" /> Bônus: Kit de Artes para Vendas</span>
+                <span className="font-mono text-gray-400">R$ 57,00</span>
+              </div>
+              <div className="flex justify-between items-center text-xs text-gray-600 font-bold pt-2.5 py-1">
+                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 shrink-0" /> Bônus: Guia de Combos Lucrativos de São João</span>
+                <span className="font-mono text-gray-400">R$ 37,00</span>
               </div>
             </div>
 
             {/* Total Math show */}
             <div className="text-center bg-gray-50 p-6 rounded-2xl border border-gray-100 space-y-2">
               <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">SOMA DE TODO O MATERIAL:</p>
-              <p className="text-lg text-gray-400 line-through font-mono font-bold leading-none">R$ 144,00</p>
-              <p className="text-xs text-emerald-700 font-extrabold uppercase">DESCONTO EXCLUSIVO APLICADO: - R$ 124,10</p>
+              <p className="text-lg text-gray-400 line-through font-mono font-bold leading-none">R$ 238,00</p>
+              <p className="text-xs text-emerald-700 font-extrabold uppercase">DESCONTO EXCLUSIVO APLICADO: - R$ 218,10</p>
               
               <div className="pt-2">
                 <p className="text-xs text-gray-400 uppercase font-black">HOJE, APENAS:</p>
@@ -1246,7 +1286,7 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => {
-                    const text = "Como faço para receber o eBook e as planilhas?";
+                    const text = "Como faço para receber o método prático e as planilhas?";
                     setChatMessages(prev => [...prev, { sender: "user", text, time: "Agora" }]);
                     setTimeout(() => {
                       setChatMessages(prev => [...prev, {

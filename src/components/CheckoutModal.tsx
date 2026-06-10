@@ -329,11 +329,19 @@ export default function CheckoutModal({ isOpen, onClose, userEmail = "robarros19
               <div className="bg-[#2A1711]/5 p-4 rounded-2xl border border-accent/15 space-y-2">
                 <h6 className="text-[11px] font-bold uppercase text-gray-500">Resumo do pedido:</h6>
                 <div className="flex justify-between text-xs text-gray-700">
-                  <span>São João Lucrativo: 45 Receitas Profissionais</span>
+                  <span>Método Prático São João Lucrativo</span>
                   <span className="font-bold">R$ 19,90</span>
                 </div>
                 <div className="flex justify-between text-xs text-emerald-800 font-bold">
-                  <span>↳ Super Bônus: Tabela de Custos Inteligente + Guia</span>
+                  <span>↳ Planilha Inteligente de Custos</span>
+                  <span>GRÁTIS</span>
+                </div>
+                <div className="flex justify-between text-xs text-emerald-800 font-bold">
+                  <span>↳ Kit de Artes para Vendas</span>
+                  <span>GRÁTIS</span>
+                </div>
+                <div className="flex justify-between text-xs text-emerald-800 font-bold">
+                  <span>↳ Guia de Combos Lucrativos de São João</span>
                   <span>GRÁTIS</span>
                 </div>
                 <div className="border-t border-dashed border-accent/20 pt-2 flex justify-between font-bold text-sm text-brand-dark">
@@ -395,7 +403,7 @@ export default function CheckoutModal({ isOpen, onClose, userEmail = "robarros19
                 
                 <div className="space-y-1.5 text-xs text-gray-600">
                   <p><strong>Nome do Cliente:</strong> {name || "Empreendedora de Sucesso"}</p>
-                  <p><strong>Destinatário do eBook:</strong> <span className="text-emerald-700 font-bold">{email}</span></p>
+                  <p><strong>Acesso Enviado para:</strong> <span className="text-emerald-700 font-bold">{email}</span></p>
                   <p><strong>Status de Envio:</strong> <span className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold text-[10px]">ENVIADO IMEDIATO</span></p>
                 </div>
               </div>
