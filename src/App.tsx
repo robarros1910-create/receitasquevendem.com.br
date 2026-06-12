@@ -46,7 +46,7 @@ import { DELIVERABLES, BONUSES, FAQS } from "./data";
 // Imagem gastronômica premium rica de comidas juninas
 import comidasJuninasPremium from "./assets/images/comidas_juninas_premium_1780515434849.png";
 import saoJoaoMockup from "./assets/images/sao_joao_mockup_v2_1780515338548.png";
-import saoJoaoBannerPremium from "./assets/images/sao_joao_banner_premium_1781051537037.png";
+import saoJoaoBannerPremium from "./assets/images/sao_joao_banner_premium_1781051537037-2.png";
 import newBanner from "./assets/images/newbanner.png";
 
 // ==========================================
@@ -359,7 +359,7 @@ export default function App() {
               {/* Inner picture frame */}
               <div className="relative rounded-[1.2rem] overflow-hidden border-2 border-[#FFA000]/60 bg-[#120705] shadow-inner mt-4">
                 <img 
-                  src={saoJoaoBannerPremium} 
+                  src={`${saoJoaoBannerPremium}?v=10`} 
                   alt="Apostila Digital São João Lucrativo Método Prático e 3 Super Bônus" 
                   referrerPolicy="no-referrer"
                   className="w-full h-auto block"
@@ -518,7 +518,7 @@ export default function App() {
               {/* Added Bundle Banner Asset */}
               <div className="w-full relative rounded-2xl overflow-hidden border border-[#FFA100]/30 shadow-md">
                 <img 
-                  src={newBanner} 
+                  src={`${newBanner}?v=5`} 
                   alt="Apostila São João Lucrativo Banner Oficial" 
                   referrerPolicy="no-referrer"
                   className="w-full h-auto block hover:scale-[1.01] transition-transform duration-300"
@@ -878,7 +878,7 @@ export default function App() {
             {/* Banner do Pitch de Vendas */}
             <div className="w-full relative rounded-2xl overflow-hidden border border-[#FFA100]/30 shadow-md">
               <img 
-                src={newBanner} 
+                src={`${newBanner}?v=5`} 
                 alt="Apostila São João Lucrativo Banner Oficial" 
                 referrerPolicy="no-referrer"
                 className="w-full h-auto block hover:scale-[1.01] transition-transform duration-300"
