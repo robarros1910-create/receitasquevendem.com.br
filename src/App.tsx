@@ -40,19 +40,21 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 import ProfitCalculator from "./components/ProfitCalculator";
 import CheckoutModal from "./components/CheckoutModal";
+import WhatsAppTestimonials from "./components/WhatsAppTestimonials";
 import { DELIVERABLES, BONUSES, FAQS } from "./data";
 
 // Imagem gastronômica premium rica de comidas juninas
 import comidasJuninasPremium from "./assets/images/comidas_juninas_premium_1780515434849.png";
 import saoJoaoMockup from "./assets/images/sao_joao_mockup_v2_1780515338548.png";
 import saoJoaoBannerPremium from "./assets/images/sao_joao_banner_premium_1781051537037.png";
+import newBanner from "./assets/images/newbanner.png";
 
 // ==========================================
 // CONFIGURAÇÕES DE LANÇAMENTO (HOTMART)
 // Mude para "true" para redirecionar os botões de compra direto para seu link oficial da Hotmart!
 // Se estiver como "false", a página exibe uma maravilhosa simulação de checkout nativa com Order Bump e Upsell.
 const USAR_LINK_DIRETO_HOTMART = true;
-const LINK_CHECKOUT_HOTMART = "https://pay.hotmart.com/A106118711S";
+const LINK_CHECKOUT_HOTMART = "https://pay.hotmart.com/A106118711S?checkoutMode=10";
 
 // CONFIGURAÇÃO DO WHATSAPP REAL DE SUPORTE
 // Substitua pelo seu número para receber dúvidas diretamente!
@@ -512,6 +514,17 @@ export default function App() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark leading-tight">
                 O São João é a época em que as pessoas mais clamam por doces típicos.
               </h2>
+              
+              {/* Added Bundle Banner Asset */}
+              <div className="w-full relative rounded-2xl overflow-hidden border border-[#FFA100]/30 shadow-md">
+                <img 
+                  src={newBanner} 
+                  alt="Apostila São João Lucrativo Banner Oficial" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-auto block hover:scale-[1.01] transition-transform duration-300"
+                />
+              </div>
+
               <div className="space-y-4 text-sm text-gray-700 leading-relaxed font-medium">
                 <p>
                   Pense comigo: enquanto tantas pessoas estão gastando muito comprando comidas caras de última hora nas barraquinhas, você pode se posicionar de forma inteligente.
@@ -841,136 +854,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* NEW PROVA SOCIAL - HISTÓRIAS DE SUCESSO (High-converting CRO section) */}
-      <section className="bg-amber-50/45 py-16 px-6 border-y border-amber-200/50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <span className="text-xs uppercase font-extrabold tracking-widest text-[#6D4C41] block mb-2">PROVA REAL DE RESULTADOS</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-dark leading-tight">
-              Histórias de Sucesso de Quem Agiu a Tempo
-            </h2>
-            <p className="text-sm text-gray-600 mt-2 font-medium">
-              Veja como nossas alunas transformaram ingredientes simples em faturamentos expressivos no ano passado:
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Card 1 */}
-            <div className="bg-white p-6 rounded-2xl shadow-md border border-amber-200/40 relative flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  {/* Avatar fallback */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary/20 text-[#6D4C41] font-black rounded-full flex items-center justify-center text-sm border border-primary/30">
-                      LM
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-sm text-[13px] text-brand-dark leading-tight">Luciana Mendes</h4>
-                      <p className="text-[10px] text-gray-400 font-mono">Caruaru - PE</p>
-                    </div>
-                  </div>
-                  <span className="bg-emerald-100 text-emerald-800 text-[9px] font-black px-2 py-0.5 rounded uppercase">
-                    Compra Verificada✓
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-1 text-yellow-500">
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                </div>
-
-                <p className="text-xs text-gray-700 italic leading-relaxed font-medium">
-                  "Eu estava desempregada e muito preocupada. Decidi arriscar os dezenove reais no guia e comecei com os bolos na marmitinha de milho com coco. Postei no grupo de condomínio do bairro e em 3 horas fechei os primeiros 14 pedidos! Só no segundo mês, tirando os custos que a tabela ajuda a calcular certinho, lucrei <strong className="text-secondary font-bold">R$ 1.850,00 livre</strong> no Pix!"
-                </p>
-              </div>
-              
-              <div className="mt-4 pt-3 border-t border-dashed border-gray-100 flex items-center justify-between text-[10px] font-bold text-gray-400 uppercase">
-                <span>Iniciou do zero</span>
-                <span className="text-emerald-700">Faturamento extra✓</span>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white p-6 rounded-2xl shadow-md border border-amber-200/40 relative flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  {/* Avatar fallback */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-secondary/15 text-secondary font-black rounded-full flex items-center justify-center text-sm border border-secondary/30">
-                      MS
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-sm text-[13px] text-brand-dark leading-tight">Márcia Silva</h4>
-                      <p className="text-[10px] text-gray-400 font-mono">Campina Grande - PB</p>
-                    </div>
-                  </div>
-                  <span className="bg-emerald-100 text-emerald-800 text-[9px] font-black px-2 py-0.5 rounded uppercase">
-                    Compra Verificada✓
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-1 text-yellow-500">
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                </div>
-
-                <p className="text-xs text-gray-700 italic leading-relaxed font-medium">
-                  "A planilha de precificação e custos valeu cada centavo. Eu achava que estava lucrando, mas na verdade estava quase pagando para cozinhar. Com as receitas de Canjica Cremosa no copo e o cálculo de combos que o material ensina, consegui reprecificar e faturar <strong className="text-secondary font-bold">R$ 3.200,00</strong> na nossa região. Indico para todo mundo!"
-                </p>
-              </div>
-              
-              <div className="mt-4 pt-3 border-t border-dashed border-gray-100 flex items-center justify-between text-[10px] font-bold text-gray-400 uppercase">
-                <span>Organizou as contas</span>
-                <span className="text-emerald-700">Lucro de 240%✓</span>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white p-6 rounded-2xl shadow-md border border-amber-200/40 relative flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  {/* Avatar fallback */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#6D4C41]/20 text-brand-dark font-black rounded-full flex items-center justify-center text-sm border border-accent/30">
-                      SR
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-sm text-[13px] text-brand-dark leading-tight">Sandra Regina</h4>
-                      <p className="text-[10px] text-gray-400 font-mono">São Paulo - SP</p>
-                    </div>
-                  </div>
-                  <span className="bg-emerald-100 text-emerald-800 text-[9px] font-black px-2 py-0.5 rounded uppercase">
-                    Compra Verificada✓
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-1 text-yellow-500">
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
-                </div>
-
-                <p className="text-xs text-gray-700 italic leading-relaxed font-medium">
-                  "Eu trabalho em período integral e não tinha tempo nenhum para divulgar. Usei os roteiros prontos de cópia do WhatsApp que vêm de bônus, modifiquei de leve e enviei para a secretaria de duas escolas onde tenho contato. Fechei encomendas para festas escolares grandes. Lucrei <strong className="text-secondary font-bold">R$ 1.450,00 a mais</strong> trabalhando só no sábado!"
-                </p>
-              </div>
-              
-              <div className="mt-4 pt-3 border-t border-dashed border-gray-100 flex items-center justify-between text-[10px] font-bold text-gray-400 uppercase">
-                <span>Conciliou horários</span>
-                <span className="text-emerald-700">Roteiros prontos✓</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* NEW PROVA SOCIAL - HISTÓRIAS DE SUCESSO (High-converting CRO section with simulated WhatsApp chats) */}
+      <WhatsAppTestimonials />
 
       {/* SECTION 08 — OFERTA IMPERDÍVEL (Value Stacking) */}
       <section id="oferta-uncondicional" className="py-20 px-6 bg-gradient-to-b from-[#FFFDF9] to-[#FFF8E7] border-t border-primary/20 relative">
@@ -990,6 +875,16 @@ export default function App() {
 
           <div className="p-6 sm:p-8 space-y-6">
             
+            {/* Banner do Pitch de Vendas */}
+            <div className="w-full relative rounded-2xl overflow-hidden border border-[#FFA100]/30 shadow-md">
+              <img 
+                src={newBanner} 
+                alt="Apostila São João Lucrativo Banner Oficial" 
+                referrerPolicy="no-referrer"
+                className="w-full h-auto block hover:scale-[1.01] transition-transform duration-300"
+              />
+            </div>
+
             {/* List items values stacked */}
             <div className="space-y-3 divide-y divide-gray-100">
               <div className="flex justify-between items-center text-xs text-gray-600 font-bold py-1">
