@@ -363,6 +363,8 @@ export default function App() {
                   alt="Apostila Digital São João Lucrativo Método Prático e 3 Super Bônus" 
                   referrerPolicy="no-referrer"
                   className="w-full h-auto block"
+                  fetchPriority="high"
+                  decoding="sync"
                 />
               </div>
 
@@ -521,6 +523,8 @@ export default function App() {
                   src={`${newBanner}?v=5`} 
                   alt="Apostila São João Lucrativo Banner Oficial" 
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto block hover:scale-[1.01] transition-transform duration-300"
                 />
               </div>
@@ -881,6 +885,8 @@ export default function App() {
                 src={`${newBanner}?v=5`} 
                 alt="Apostila São João Lucrativo Banner Oficial" 
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto block hover:scale-[1.01] transition-transform duration-300"
               />
             </div>

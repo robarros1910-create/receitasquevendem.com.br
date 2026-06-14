@@ -351,12 +351,12 @@ function WhatsAppFallbackMockup({ chat }: { chat: ChatProfile }) {
 }
 
 // Single screenshot responsive wrapper with state-based fallback
-function TestimonialItem({ chat }: { chat: ChatProfile; key?: string }) {
+function TestimonialItem({ chat, forceInteractive }: { chat: ChatProfile; forceInteractive: boolean }) {
   const [useFallback, setUseFallback] = useState(false);
 
   // We detect if the actual screenshot image raises an error (which happens if they haven't uploaded it)
-  // If it does, we show the beautiful pixel-perfect replication in its place
-  if (useFallback) {
+  // If we force interactive mode, or if error triggers, we use the beautiful pixel-perfect replication
+  if (useFallback || forceInteractive) {
     return <WhatsAppFallbackMockup chat={chat} />;
   }
 
@@ -368,6 +368,8 @@ function TestimonialItem({ chat }: { chat: ChatProfile; key?: string }) {
         src={chat.imageSrc}
         alt={`Depoimento de ${chat.name}`}
         referrerPolicy="no-referrer"
+        loading="lazy"
+        decoding="async"
         onError={() => setUseFallback(true)}
         className="w-full h-auto max-h-[650px] object-contain rounded-2xl shadow-2xl border-4 border-[#1f2c34] bg-neutral-900"
         style={{
@@ -379,6 +381,11 @@ function TestimonialItem({ chat }: { chat: ChatProfile; key?: string }) {
 }
 
 export default function WhatsAppTestimonials() {
+  // viewMode controls performance opt-in. 
+  // 'interactive' uses beautiful HTML mockups (renders in milliseconds, 0kb download)
+  // 'images' uses original heavy PNGs (around ~7.5MB) using loading="lazy" to delay download.
+  const [viewMode, setViewMode] = useState<"interactive" | "images">("interactive");
+
   return (
     <section id="depoimentos" className="bg-[#FFFDF9] py-20 px-4 sm:px-6 border-y border-amber-200/50 overflow-hidden relative">
       {/* Background decoration flags */}
@@ -387,7 +394,7 @@ export default function WhatsAppTestimonials() {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header Block */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-6">
           <div className="inline-flex items-center gap-1.5 bg-[#FFF0E0] border border-[#FFA100]/30 text-[#A0522D] text-[10px] sm:text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest mb-4">
             <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-500 animate-spin" />
             Prints Reais — Resultados Comprovados
@@ -395,8 +402,41 @@ export default function WhatsAppTestimonials() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2A1711] leading-tight font-sans">
             Conversas Reais de Quem Já Está Faturando Alto!
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 mt-3 font-medium">
-            Arraste ou passe o mouse por cima das conversas para pausar a rolagem automática:
+        </div>
+
+        {/* Dynamic Performance Optimization Toggle */}
+        <div className="flex flex-col items-center justify-center mb-10 w-full max-w-md mx-auto bg-amber-50/60 border border-amber-100/80 p-2.5 rounded-2xl">
+          <p className="text-[11px] text-[#A0522D] font-bold uppercase tracking-wider mb-2 text-center flex items-center justify-center gap-1">
+            ⚡ Carregamento Inteligente Otimizado
+          </p>
+          <div className="flex bg-neutral-100 p-1 rounded-xl w-full">
+            <button
+              onClick={() => setViewMode("interactive")}
+              className={`flex-1 flex items-center justify-center gap-1 py-2 text-xs font-black rounded-lg transition-all duration-200 cursor-pointer ${
+                viewMode === "interactive"
+                  ? "bg-[#2A1711] text-white shadow-md scale-[1.02]"
+                  : "text-gray-500 hover:text-gray-800"
+              }`}
+            >
+              <span>⚡ Modo Interativo</span>
+              <span className="text-[8px] opacity-75 inline bg-[#00a884]/20 text-[#00a884] px-1.5 py-0.5 rounded ml-1 font-mono uppercase font-black">0kb</span>
+            </button>
+            <button
+              onClick={() => setViewMode("images")}
+              className={`flex-1 flex items-center justify-center gap-1 py-1.5 text-xs font-black rounded-lg transition-all duration-200 cursor-pointer ${
+                viewMode === "images"
+                  ? "bg-[#2A1711] text-white shadow-md scale-[1.02]"
+                  : "text-gray-500 hover:text-gray-800"
+              }`}
+            >
+              <span>📸 Prints Originais</span>
+            </button>
+          </div>
+          <p className="text-[10px] text-gray-400 mt-1.5 text-center font-medium">
+            {viewMode === "interactive" 
+              ? "O modo interativo renderiza os chats em código ultra nítido sem consumir seus dados móveis!"
+              : "Exibindo os arquivos PNG reais hospedados na pasta (pode levar alguns segundos para carregar)."
+            }
           </p>
         </div>
 
@@ -419,15 +459,15 @@ export default function WhatsAppTestimonials() {
             >
               {/* First Track block */}
               {TESTIMONIALS_CHATS.map((chat, idx) => (
-                <TestimonialItem key={`track1-${idx}-${chat.name}`} chat={chat} />
+                <TestimonialItem key={`track1-${idx}-${chat.name}`} chat={chat} forceInteractive={viewMode === "interactive"} />
               ))}
               {/* Duplicate Clone track block for seamless looping */}
               {TESTIMONIALS_CHATS.map((chat, idx) => (
-                <TestimonialItem key={`track2-${idx}-${chat.name}`} chat={chat} />
+                <TestimonialItem key={`track2-${idx}-${chat.name}`} chat={chat} forceInteractive={viewMode === "interactive"} />
               ))}
               {/* Third Clone track block to satisfy wide screens and eliminate gaps completely */}
               {TESTIMONIALS_CHATS.map((chat, idx) => (
-                <TestimonialItem key={`track3-${idx}-${chat.name}`} chat={chat} />
+                <TestimonialItem key={`track3-${idx}-${chat.name}`} chat={chat} forceInteractive={viewMode === "interactive"} />
               ))}
             </div>
           </div>
