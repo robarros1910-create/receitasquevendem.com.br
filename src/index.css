@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #F4B400;
+  --color-primary-dark: #D49C00;
+  --color-primary-light: #FFD454;
+  --color-secondary: #C62828;
+  --color-secondary-dark: #A51D1D;
+  --color-secondary-light: #EF5350;
+  --color-accent: #6D4C41;
+  --color-accent-dark: #4E342E;
+  --color-bg-cream: #FFF8E7;
+  --color-brand-dark: #2A1711;
+  --color-white-cream: #FFFDF9;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-cream);
+  color: var(--color-brand-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom glowing effects and patterns */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(244, 180, 0, 0.35);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(198, 40, 40, 0.25);
+}
+
+/* Festive flags bg pattern helper */
+.bg-flags {
+  background-image: radial-gradient(var(--color-primary-light) 1px, transparent 0), radial-gradient(var(--color-secondary-light) 1px, transparent 0);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  opacity: 0.05;
+}
+
+/* Pulse animation for urgency buttons */
+@keyframes pulse-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 180, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(244, 180, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 180, 0, 0);
+  }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(198, 40, 40, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(198, 40, 40, 0);
+  }
+}
+
+.animate-pulse-red {
+  animation: pulse-red 2s infinite;
+}
+

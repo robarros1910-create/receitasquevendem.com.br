@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SÃO JOÃO LUCRATIVO 🔥</title>
+    <!-- Safe JSON.stringify Patch to prevent circular reference crashes in tracking scripts or logs -->
+    <script>
+      (function() {
+        const originalStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          try {
+            return originalStringify(value, replacer, space);
+          } catch (err) {
+            try {
+              const cache = new WeakSet();
+              const result = originalStringify(value, function(key, val) {
+                if (typeof key === 'string' && (key.startsWith('__react') || key.startsWith('__vd'))) {
+                  return undefined;
+                }
+                if (val && (val instanceof HTMLElement || val instanceof Node || (val.constructor && (val.constructor.name === 'HTMLButtonElement' || val.constructor.name === 'FiberNode')))) {
+                  return "[Element]";
+                }
+                if (typeof val === 'object' && val !== null) {
+                  if (cache.has(val)) {
+                    return "[Circular]";
+                  }
+                  cache.add(val);
+                }
+                if (typeof replacer === 'function') {
+                  return replacer.call(this, key, val);
+                }
+                return val;
+              }, space);
+              if (result === undefined) {
+                return "null";
+              }
+              return result;
+            } catch (fallbackErr) {
+              return "{}";
+            }
+          }
+        };
+      })();
+    </script>
+    <!-- UTMfy Tracking and Pixel Scripts -->
+    <script>
+      window.pixelId = "6a20d49db7749013991adbf3";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
